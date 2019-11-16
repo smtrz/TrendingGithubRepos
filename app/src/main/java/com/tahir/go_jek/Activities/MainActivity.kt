@@ -9,8 +9,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // Attaching the layout to the toolbar object
-        //setting toolbar
-       // setSupportActionBar(findViewById(R.id.tool_bar))
+        //        //setting toolbar
+        //       // setSupportActionBar(findViewById(R.id.tool_bar))
 
     }
 }

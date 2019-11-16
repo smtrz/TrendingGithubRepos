@@ -10,6 +10,7 @@
     <include
         android:id="@+id/tool_bar"
         layout="@layout/act_toolbar" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_repos"
         android:layout_width="match_parent"
