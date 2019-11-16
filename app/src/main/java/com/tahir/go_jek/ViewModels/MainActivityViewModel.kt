@@ -1,15 +1,12 @@
 package com.tahir.go_jek.ViewModels
 
 import android.app.Application
-
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-
 import com.tahir.go_jek.Configurations.App
 import com.tahir.go_jek.Database.DbRepository
 import com.tahir.go_jek.Models.BaseTrending
-
 import javax.inject.Inject
 
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
@@ -22,16 +19,23 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
     val allItems: LiveData<List<BaseTrending>>
         get() = dbrepo!!.getallArticles()
 
+    val sorted_allItems_bystar: List<BaseTrending>
+        get() = dbrepo!!.get_sorted_list_star()
+
+    val sorted_allItems_byname: List<BaseTrending>
+        get() = dbrepo!!.get_sorted_list_name()
+
+
     init {
-     //   App.getApp().getAppLevelComponent().inject(this)
+
 
         App.app.appLevelComponent.inject(this)
     }
 
-    /*fun ifDataIsloading(): MutableLiveData<Boolean> {
+    fun ifDataIsloading(): MutableLiveData<Boolean> {
         return dbrepo!!.ifDataIsloading()
 
-    }*/
+    }
     // just refresh the data based on the result.
 
     fun callNewsAPI() {

@@ -1,5 +1,4 @@
 package com.tahir.go_jek.Adapters
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +24,7 @@ class NewsAdapter(
     : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
 
-    fun loadItems(newItems: List<BaseTrending>, ni: NewsListInterface) {
+    fun loadItems(newItems: List<BaseTrending>?, ni: NewsListInterface) {
 
         articles = newItems
         ni.ifListisEmpty(articles!!.size)
@@ -46,7 +45,7 @@ class NewsAdapter(
             Picasso.get().load(articles!![position].avatar).into(holder.img)
 
             holder.lang!!.text = articles!![position].language
-            holder.star!!.text = articles!![position].stars
+            holder.star!!.text = articles!![position].stars.toString()
 
             holder.fork!!.text = articles!![position].forks
 

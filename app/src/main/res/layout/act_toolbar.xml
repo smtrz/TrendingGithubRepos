@@ -1,43 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tool_layout"
     android:layout_width="match_parent"
     android:layout_height="56dp"
-    android:minHeight="?attr/actionBarSize"
-    android:theme="?attr/actionBarTheme">
+    android:background="@color/white">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.Toolbar
+
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <TextView
+        >
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/list_margin"
+
+
+        />
+
+    <RelativeLayout
+        android:id="@+id/more_click"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="14dp"
-            android:gravity="center_horizontal"
 
-            android:text="@string/heading_main"
-            android:textColor="@color/heading_color"
-            android:textSize="21sp"
-            android:textStyle="bold" />
+            android:src="@drawable/more_black" />
+    </RelativeLayout>
 
-        <!-- <ImageView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical|right"
-             android:layout_marginRight="16dp"
-             android:src="@drawable/more_black"></ImageView>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/heading_main"
+        android:textColor="@color/heading_color"
+        android:textSize="21sp"
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="14dp"
+        ></TextView>
 
-            android:background="@color/list_margin"></View>
+</RelativeLayout>
 
 
-    </LinearLayout>
-</androidx.appcompat.widget.Toolbar>
+
+

@@ -26,7 +26,7 @@ class BaseTrending {
 
     var languageColor: String? = null
 
-    var stars: String? = null
+    var stars: Int? = null
 
     var url: String? = null
 

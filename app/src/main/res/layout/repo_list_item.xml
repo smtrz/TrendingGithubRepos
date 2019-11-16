@@ -84,11 +84,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/third_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/third_layout"
-                android:visibility="gone"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/desc"
@@ -126,8 +126,7 @@
                     android:layout_marginLeft="8dp"
                     android:drawableLeft="@drawable/star"
                     android:drawablePadding="4dp"
-                    android:text="Hello World!"
-                    />
+                    android:text="Hello World!" />
 
                 <TextView
                     android:id="@+id/fork"
@@ -138,15 +137,12 @@
                     android:drawablePadding="4dp"
                     android:text="Hello World!"
 
-                 />
+                    />
             </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-    <!--<View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#000" />-->
+
 
 </RelativeLayout>
