@@ -10,25 +10,20 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.TransitionManager
-
 import com.squareup.picasso.Picasso
-import com.tahir.go_jek.Helpers.DateHelper
 import com.tahir.go_jek.Interfaces.NewsListInterface
 import com.tahir.go_jek.Models.BaseTrending
 import com.tahir.go_jek.R
-
-import javax.inject.Inject
+import kotlinx.android.synthetic.main.repo_list_item.view.*
 
 
 class NewsAdapter(
-    internal var context: Context,
-    internal var articles: List<BaseTrending>?
-)// DaggerDateComponent.create().inject(this);
+    var context: Context,
+    var articles: List<BaseTrending>?
+)
+
     : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
-    // @BindView(R.id.share)
-    //ImageView share;
-    @Inject
-    internal var dh: DateHelper? = null
+
 
     fun loadItems(newItems: List<BaseTrending>, ni: NewsListInterface) {
 
@@ -58,24 +53,19 @@ class NewsAdapter(
             holder.cardView!!.setOnClickListener {
                 TransitionManager.beginDelayedTransition(holder.cardView!!)
 
-                if (holder.desc!!.visibility == View.GONE && holder.last_line!!.visibility == View.GONE) {
-                    holder.desc!!.visibility = View.VISIBLE
+                if (holder.third_line!!.visibility == View.GONE && holder.last_line!!.visibility == View.GONE) {
+                    holder.third_line!!.visibility = View.VISIBLE
 
                     holder.last_line!!.visibility = View.VISIBLE
                 } else {
 
-                    holder.desc!!.visibility = View.GONE
+                    holder.third_line!!.visibility = View.GONE
 
                     holder.last_line!!.visibility = View.GONE
                 }
             }
 
-            /* holder.share.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    GeneralHelper.shareNews(articles.get(position).getTitle(), articles.get(position).getUrl(), context);
-                }
-            });*/
+
         } catch (e: Exception) {
             //eat this one.
 
@@ -85,7 +75,6 @@ class NewsAdapter(
 
     override fun getItemCount(): Int {
         return if (articles != null) {
-
             articles!!.size
         } else {
 
@@ -95,19 +84,20 @@ class NewsAdapter(
     }
 
 
-    inner class NewsViewHolder
-    // TextView published;
-
+    class NewsViewHolder
         (itemView: View) : RecyclerView.ViewHolder(itemView) {
-        internal var name: TextView? = null
-        internal var img: ImageView? = null
-        internal var heading: TextView? = null
-        internal var desc: TextView? = null
-        internal var lang: TextView? = null
-        internal var star: TextView? = null
-        internal var fork: TextView? = null
-        internal var cardView: CardView? = null
-        internal var last_line: LinearLayout? = null
+
+
+        internal var name: TextView? = itemView.name
+        internal var img: ImageView? = itemView.image
+        internal var heading: TextView? = itemView.heading
+        internal var desc: TextView? = itemView.desc
+        internal var lang: TextView? = itemView.lang
+        internal var star: TextView? = itemView.star
+        internal var fork: TextView? = itemView.fork
+        internal var cardView: CardView? = itemView.cardView
+        internal var last_line: LinearLayout? = itemView.last_line
+        internal var third_line: LinearLayout? = itemView.third_layout
     }
 
 

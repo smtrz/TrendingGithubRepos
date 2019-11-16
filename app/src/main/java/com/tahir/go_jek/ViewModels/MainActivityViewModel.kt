@@ -16,7 +16,7 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
 
     // injecting repository
     @Inject
-    internal var dbrepo: DbRepository? = null
+    lateinit var dbrepo: DbRepository
 
 
     val allItems: LiveData<List<BaseTrending>>
