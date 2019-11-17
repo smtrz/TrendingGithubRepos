@@ -1,26 +1,26 @@
-package com.tahir.go_jek
+package com.tahir.go_jek.Activities
 
 import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.tahir.go_jek.Adapters.NewsAdapter
+import com.tahir.go_jek.Adapters.TrendingRepoAdapter
 import com.tahir.go_jek.Helpers.ProgressDialogHelper
 import com.tahir.go_jek.Interfaces.NewsListInterface
 import com.tahir.go_jek.Models.BaseTrending
-import com.tahir.go_jek.ViewModels.MainActivityViewModel
+import com.tahir.go_jek.R
+import com.tahir.go_jek.ViewModels.TrendingActivityViewModel
 import kotlinx.android.synthetic.main.act_toolbar.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class SecondActivity : AppCompatActivity(), NewsListInterface, View.OnClickListener {
+class TrendingActivity : AppCompatActivity(), NewsListInterface, View.OnClickListener {
     override fun onClick(v: View?) {
         popMenu()
 
@@ -39,8 +39,8 @@ class SecondActivity : AppCompatActivity(), NewsListInterface, View.OnClickListe
         }
     }
 
-    lateinit var newsViewModel: MainActivityViewModel
-    lateinit var adapter: NewsAdapter
+    lateinit var newsViewModel: TrendingActivityViewModel
+    lateinit var adapter: TrendingRepoAdapter
     internal var list: List<BaseTrending>? = null
 
 
@@ -64,7 +64,7 @@ class SecondActivity : AppCompatActivity(), NewsListInterface, View.OnClickListe
                 if (aBoolean!!) {
                     val ph = ProgressDialogHelper()
 
-                    progressdialog = ph.showDialog(this@SecondActivity)
+                    progressdialog = ph.showDialog(this@TrendingActivity)
 
                 } else {
                     if (progressdialog != null) {
@@ -79,26 +79,18 @@ class SecondActivity : AppCompatActivity(), NewsListInterface, View.OnClickListe
 
         val popupMenu: PopupMenu = PopupMenu(this, more)
         popupMenu.menuInflater.inflate(R.menu.popupmenu, popupMenu.menu)
-        // popupMenu.show()
         popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item: MenuItem? ->
 
             when (item!!.itemId) {
                 R.id.action_sort_star -> {
-                    // newsViewModel.allstarsortedItems
                     adapter.loadItems(newsViewModel.sorted_allItems_bystar, this)
                     adapter.notifyDataSetChanged()
-                  //  Toast.makeText(this@SecondActivity, item.title, Toast.LENGTH_SHORT).show();
                 }
                 R.id.action_sort_name -> {
 
                     adapter.loadItems(newsViewModel.sorted_allItems_byname, this)
                     adapter.notifyDataSetChanged()
-                    /*  adapter.loadItems(newsViewModel.allNamesortedItems.value, this)
-                      Toast.makeText(this@SecondActivity, item.title, Toast.LENGTH_SHORT).show();
 
-                      adapter.notifyDataSetChanged()*/
-
-                    // Toast.makeText(this@MainActivity, item.title, Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -112,8 +104,8 @@ class SecondActivity : AppCompatActivity(), NewsListInterface, View.OnClickListe
         more.setOnClickListener(this)
         rv_repos?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         // setting up recyclerview and also binding activity with the view-model
-        newsViewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
-        adapter = NewsAdapter(this, list)
+        newsViewModel = ViewModelProviders.of(this).get(TrendingActivityViewModel::class.java)
+        adapter = TrendingRepoAdapter(this, list)
         rv_repos?.setAdapter(adapter)
         // pull to refresh
         pullToRefresh?.setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener {

@@ -16,12 +16,12 @@ import com.tahir.go_jek.R
 import kotlinx.android.synthetic.main.repo_list_item.view.*
 
 
-class NewsAdapter(
+class TrendingRepoAdapter(
     var context: Context,
     var articles: List<BaseTrending>?
 )
 
-    : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+    : RecyclerView.Adapter<TrendingRepoAdapter.NewsViewHolder>() {
 
 
     fun loadItems(newItems: List<BaseTrending>?, ni: NewsListInterface) {
@@ -38,7 +38,6 @@ class NewsAdapter(
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         try {
             holder.name!!.text = articles!![position].author
-            //   holder.published.setText(dh.calculateDateDifference(articles.get(position).getPublishedAt()));
             holder.heading!!.text = articles!![position].name
             holder.desc!!.text = articles!![position].description
 

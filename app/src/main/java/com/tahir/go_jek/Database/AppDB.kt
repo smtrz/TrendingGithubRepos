@@ -10,5 +10,5 @@ import com.tahir.go_jek.Models.BaseTrending
 abstract class AppDB : RoomDatabase() {
 
 
-    abstract fun articleDao(): ArticlesDao
+    abstract fun trendingDao(): TrendingRepoDao
 }

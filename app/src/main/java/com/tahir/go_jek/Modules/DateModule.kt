@@ -1,29 +1,32 @@
 package com.tahir.go_jek.Modules
 
 import com.tahir.go_jek.Helpers.DateHelper
-
-import java.text.SimpleDateFormat
-import java.util.Date
-
-import javax.inject.Singleton
-
 import dagger.Module
 import dagger.Provides
+import java.text.SimpleDateFormat
+import java.util.*
+import javax.inject.Singleton
 
 @Module
-object DateModule {
-    internal val date: Date
-        @Provides
-        @Singleton
-        get() = Date()
+class DateModule {
 
-    internal val dateFormat: SimpleDateFormat
-        @Provides
-        @Singleton
-        get() = SimpleDateFormat("yyyy-MM-dd'T'HH:mm")
+    @Provides
+    @Singleton
+    fun getDate(): Date {
 
-    internal val dateHelper: DateHelper
-        @Provides
-        @Singleton
-        get() = DateHelper()
+        return Date()
+    }
+
+    @Provides
+    @Singleton
+    fun getDateFormat(): SimpleDateFormat {
+
+        return SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy")
+    }
+
+    val dateHelper: DateHelper
+         @Provides
+         @Singleton
+         get() = DateHelper()
 }
+

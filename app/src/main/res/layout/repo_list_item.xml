@@ -59,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:ellipsize="marquee"
+                    android:fontFamily="sans-serif"
                     android:singleLine="true"
                     android:text="This is the title line"
                     android:textSize="12sp" />
@@ -77,6 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:ellipsize="marquee"
+                    android:fontFamily="sans-serif-medium"
                     android:singleLine="true"
                     android:textSize="15sp"
 
@@ -117,7 +119,9 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/circle"
                     android:drawablePadding="4dp"
-                    android:text="Hello World!" />
+                    android:fontFamily="sans-serif"
+                    android:text="Hello World!"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/star"
@@ -126,7 +130,9 @@
                     android:layout_marginLeft="8dp"
                     android:drawableLeft="@drawable/star"
                     android:drawablePadding="4dp"
-                    android:text="Hello World!" />
+                    android:fontFamily="sans-serif"
+                    android:text="Hello World!"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/fork"
@@ -134,8 +140,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:drawableLeft="@drawable/fork"
+
                     android:drawablePadding="4dp"
+                    android:fontFamily="sans-serif"
                     android:text="Hello World!"
+                    android:textSize="12sp"
 
                     />
             </LinearLayout>

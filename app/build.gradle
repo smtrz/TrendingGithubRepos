@@ -101,6 +101,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation "com.google.dagger:dagger:2.23.2"
     kapt "com.google.dagger:dagger-compiler:2.23.2"
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+
 
 
 

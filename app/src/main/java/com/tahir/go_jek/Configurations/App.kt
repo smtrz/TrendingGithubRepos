@@ -4,6 +4,7 @@ import android.app.Application
 import com.tahir.go_jek.Components.AppLevelComponent
 import com.tahir.go_jek.Components.DaggerAppLevelComponent
 import com.tahir.go_jek.Modules.ContextModule
+import com.tahir.go_jek.Modules.DateModule
 import com.tahir.go_jek.Modules.DbRepoModule
 import com.tahir.go_jek.Modules.NetModule
 
@@ -21,6 +22,7 @@ class App : Application() {
             .contextModule(ContextModule(this))
             .dbRepoModule(DbRepoModule())
             .netModule(NetModule("https://github-trending-api.now.sh/"))
+            .dateModule(DateModule())
             .build()
 
 

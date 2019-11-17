@@ -9,7 +9,7 @@ import com.tahir.go_jek.Database.DbRepository
 import com.tahir.go_jek.Models.BaseTrending
 import javax.inject.Inject
 
-class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
+class TrendingActivityViewModel(application: Application) : AndroidViewModel(application) {
 
     // injecting repository
     @Inject
@@ -39,7 +39,7 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
     // just refresh the data based on the result.
 
     fun callNewsAPI() {
-        dbrepo!!.getAllNews()
+        dbrepo!!.getData()
 
     }
 

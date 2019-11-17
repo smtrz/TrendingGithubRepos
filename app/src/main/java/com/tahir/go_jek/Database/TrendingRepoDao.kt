@@ -5,26 +5,25 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-
 import com.tahir.go_jek.Models.BaseTrending
 
 @Dao
-interface ArticlesDao {
+interface TrendingRepoDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertItem(items: List<BaseTrending>)
 
-    @Query("SELECT * from articles")
+    @Query("SELECT * from trendingrepos")
     fun getallItems(): LiveData<List<BaseTrending>>
 
-    @Query("DELETE FROM articles")
+    @Query("DELETE FROM trendingrepos")
     fun delete()
 
 
-    @Query("SELECT * from articles ORDER BY stars DESC")
-     fun sortbyStars(): List<BaseTrending>
+    @Query("SELECT * from trendingrepos ORDER BY stars DESC")
+    fun sortbyStars(): List<BaseTrending>
 
 
-    @Query("SELECT * from articles ORDER BY name")
-     fun sortbyName(): List<BaseTrending>
+    @Query("SELECT * from trendingrepos ORDER BY name")
+    fun sortbyName(): List<BaseTrending>
 }
-
