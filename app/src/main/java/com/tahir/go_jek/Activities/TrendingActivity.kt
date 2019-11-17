@@ -22,7 +22,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class TrendingActivity : AppCompatActivity(), NewsListInterface, View.OnClickListener {
     override fun onClick(v: View?) {
-        popMenu()
+        when (v?.id) {
+            R.id.more -> {
+
+                popMenu()
+
+            }
+            R.id.btn_layout -> {
+                newsViewModel.callNewsAPI()
+
+
+            }
+        }
 
 
     }
@@ -32,10 +43,15 @@ class TrendingActivity : AppCompatActivity(), NewsListInterface, View.OnClickLis
     override fun ifListisEmpty(count: Int) {
         if (adapter.itemCount === 0) {
             rv_repos?.setVisibility(View.GONE)
-            empty_view?.setVisibility(View.VISIBLE)
+            btn_layout.setVisibility(View.VISIBLE)
+            error_layout.setVisibility(View.VISIBLE)
+            // empty_view?.setVisibility(View.VISIBLE)
         } else {
             rv_repos?.setVisibility(View.VISIBLE)
-            empty_view?.setVisibility(View.GONE)
+            error_layout.setVisibility(View.GONE)
+            btn_layout.setVisibility(View.VISIBLE)
+
+            //  empty_view?.setVisibility(View.GONE)
         }
     }
 
@@ -102,6 +118,7 @@ class TrendingActivity : AppCompatActivity(), NewsListInterface, View.OnClickLis
 
     fun init() {
         more.setOnClickListener(this)
+        btn_layout.setOnClickListener(this)
         rv_repos?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         // setting up recyclerview and also binding activity with the view-model
         newsViewModel = ViewModelProviders.of(this).get(TrendingActivityViewModel::class.java)
