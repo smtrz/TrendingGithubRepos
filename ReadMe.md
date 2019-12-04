@@ -6,6 +6,11 @@ Trending Repositories of Github is an android application written in 'KOTLIN' th
   - ViewModel
   - Room Persistance library
   - Live Data
+# Screenshots
+
+<img src="https://github.com/smtrz/TrendingGithubRepos/blob/master/screen_1.png" alt="drawing" width="350"/>  |  <img src="https://github.com/smtrz/TrendingGithubRepos/blob/master/screen_2.png" alt="drawing" width="350"/>
+
+
 
 # Features
 
