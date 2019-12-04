@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Trending Repositories - Go-jek</string>
+    <string name="app_name">Trending Repositories - Github</string>
 
     <string name="heading_main">Trending</string>
 </resources>

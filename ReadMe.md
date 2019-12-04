@@ -25,12 +25,12 @@ This app uses a number of open source projects Libraries and frameworks:
 * [Room] -Data Storage using ROOM
 * [Dagger2] - Dependency injection using Dagger2
 * [Repository pattern] - Use of repository pattern for data storage and retrievel
-*  [View Model]
+* [View Model]
 
 
 ### Installation
 
-The app currently has only one branch(master), just check out that branch to get started.
+The app currently has only one branch(master), Fork and just check out that branch to get started.
 
 
 License

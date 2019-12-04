@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tahir.go_jek">
+    package="com.highbryds.trendingrepos">
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:name=".Configurations.App"
+        android:name="com.highbryds.trendingrepos.Configurations.App"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.TrendingActivity">
+        <activity android:name="com.highbryds.trendingrepos.Activities.TrendingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
