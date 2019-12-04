@@ -6,6 +6,7 @@ Trending Repositories of Github is an android application written in 'KOTLIN' th
   - ViewModel
   - Room Persistance library
   - Live Data
+<img src="https://github.com/smtrz/TrendingGithubRepos/blob/master/screen_1.png" alt="drawing" width="350"/>  |  <img src="https://github.com/smtrz/TrendingGithubRepos/blob/master/screen_2.png" alt="drawing" width="350"/>
 
 # Features
 
@@ -14,6 +15,7 @@ Trending Repositories of Github is an android application written in 'KOTLIN' th
   - Easily extendible
   - Clean UI and code
   - Mimimun API level support : 19
+  - Sort repositories
 
 
 ### Tech
@@ -37,9 +39,9 @@ License
 ----
 Designed and developed by :
 
-Tahir Raza
-smtrz@yahoo.com
-Skype: smtrz110
-Profile: https://www.linkedin.com/in/tahiraza/
+Tahir Raza<br/>
+smtrz@yahoo.com<br/>
+Skype: smtrz110<br/>
+Profile: https://www.linkedin.com/in/tahiraza/<br/>
 More about me : http://highbryds.com/tahir-raza
 
